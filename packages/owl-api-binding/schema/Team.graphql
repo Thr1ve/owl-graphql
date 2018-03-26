@@ -1,0 +1,24 @@
+type Team {
+  id: ID!
+  availableLanguages: [String]
+  handle: String
+  name: String
+  # accounts: [],
+  game: String
+  # attributes: {},
+  # players: [],
+  # type: 'TEAM',
+  # schedule: [],
+  aboutUrl: String
+  ranking: TeamRanking
+}
+
+type TeamRanking {
+  streak: String
+  streakNum: Int
+}
+
+type Query {
+  team(id: ID!): Team!
+  teams: [Team] @deprecated
+}

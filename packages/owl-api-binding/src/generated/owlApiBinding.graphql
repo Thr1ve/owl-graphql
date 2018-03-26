@@ -1,0 +1,47 @@
+type Query {
+  team(id: ID!): Team!
+  teams: [Team] @deprecated
+  match(id: ID!): Match!
+  matches: [Match]
+  map(id: ID!): Map!
+  maps: [Map]
+}
+
+type TeamRanking {
+  streak: String
+  streakNum: Int
+}
+
+type Team {
+  id: ID!
+  availableLanguages: [String]
+  handle: String
+  name: String
+  game: String
+  aboutUrl: String
+  ranking: TeamRanking
+}
+
+type Match {
+  id: ID!
+  competitors: [Team]
+  scores: [Int]
+  conclusionValue: Int
+  conclusionStrategy: String
+  winner: Team
+  dateCreated: String
+  handle: String
+  startDate: String
+  endDate: String
+  state: String
+}
+
+type Map {
+  id: ID!
+  name(language: String = "en_US"): String
+  background: String
+  icon: String
+  type: String
+  description(language: String = "en_US"): String
+  thumbnail: String
+}

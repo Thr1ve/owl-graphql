@@ -1,0 +1,20 @@
+# import * from './Team.graphql'
+
+type Match {
+  id: ID!
+  competitors: [Team]
+  scores: [Int]
+  conclusionValue: Int
+  conclusionStrategy: String
+  winner: Team
+  dateCreated: String
+  handle: String
+  startDate: String
+  endDate: String
+  state: String
+}
+
+type Query {
+  match(id: ID!): Match!
+  matches: [Match]
+}

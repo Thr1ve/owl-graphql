@@ -1,0 +1,8 @@
+projects:
+  owl-api:
+    schemaPath: schema/root.graphql
+    extensions:
+      prepare-binding:
+        output: src/generated/owlApiBinding.ts
+        generator: binding-ts
+      prepare-bundle: src/generated/owlApiBinding.graphql
