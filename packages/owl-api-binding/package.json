@@ -5,7 +5,6 @@
   "typings": "./dist/index.d.ts",
   "files": ["dist", "schema"],
   "scripts": {
-    "prepare": "npm run graphql:prepare && npm run build",
     "graphql:prepare":
       "graphql prepare && cp src/generated/owlApiBinding.graphql dist/generated/owlApBindinging.graphql",
     "typescript:compile": "rm -rf dist && tsc -d",
